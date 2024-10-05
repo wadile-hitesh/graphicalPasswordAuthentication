@@ -29,7 +29,7 @@ export default function SignUp() {
             console.log(data.files)
         })
 
-        await files.map((file :File)=>{
+        files.map((file :File)=>{
             console.log(file);
         })
 
@@ -71,9 +71,7 @@ export default function SignUp() {
                     <div
                         className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:mt-[130px] lg:max-w-[450px]">
                         <p className="text-[32px] font-bold text-zinc-950 dark:text-white">Sign In</p>
-                        <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">Enter your email and password
-                            to sign
-                            in!</p>
+                        <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">Enter your email and password to sign in!</p>
                         
                         <div className="relative my-4">
                             <div className="relative flex items-center py-1">
@@ -120,15 +118,15 @@ export default function SignUp() {
         {!next && 
         <div className="w-full h-screen mx-auto flex">
             <div className="w-2/3 flex h-full justify-center items-center">
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 bg-slate-900 p-2 rounded-2xl">
                 {
                     images.slice(0,9).map((image :Image)=>{
                         return (
-                        <div className="bg-white mx-4 my-2 rounded-xl" key={Math.random()}>
-                            <Image  src={image.url} width={200} height={50} alt=""/>
+                        <div className="bg-slate-600 bg-transparent mx-5 my-3 rounded-xl overflow-hidden blur-md hover:blur-none transition-shadow duration-300 hover:border-violet-500 hover:border-4" key={image.cid}>
+                            <Image className="transition-transform duration-300 transform" src={image.url} width={200} height={50} alt=""/>
                         </div>
                         )
-                    })
+                    }) 
                 }
                 </div>
             </div>
